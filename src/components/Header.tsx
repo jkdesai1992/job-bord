@@ -16,7 +16,9 @@ const Header = () => {
                     Logo
                 </div>
                 <div className="flex items-center text-white">
-                    <p className=" text-xl font-bold" onClick={handleToggleModal}>Add Job</p>
+                    <button onClick={handleToggleModal} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Create Job
+                    </button>
                 </div>
             </div>
         </header>
