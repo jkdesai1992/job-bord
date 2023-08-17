@@ -5,7 +5,7 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 
 interface ModalProps {
-  closeModal?: () => void;
+  closeModal: () => void;
   handleSubmit: () => void;
   checkValidation: () => void;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -21,7 +21,7 @@ export interface ModalStepProps {
   formError: FormErrors;
 }
 
-const CreateJobModal: React.FC<ModalProps> = ({ handleInputChange, formData, formError, isLoading, handleSubmit, checkValidation }) => {
+const CreateJobModal: React.FC<ModalProps> = ({ closeModal, handleInputChange, formData, formError, isLoading, handleSubmit, checkValidation }) => {
   const [activeStep, setActiveStep] = useState(1)
 
   const handelActiveState = () =>{
@@ -57,7 +57,10 @@ const CreateJobModal: React.FC<ModalProps> = ({ handleInputChange, formData, for
             <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2 gap-6">
               {handleStep()}
             </div>
-            <div className="flex justify-end mt-24">
+            <div className="flex justify-between mt-24">
+              <button onClick={closeModal} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                Close
+              </button>
               <button
                 type="button"
                 onClick={activeStep === 1 ? handelActiveState : handleSubmit}

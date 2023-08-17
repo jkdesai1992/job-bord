@@ -156,6 +156,12 @@ const JobList = () => {
         }
     }
 
+    const closeModal = () => {
+        context?.setIsModalVisible(false)
+        setFormData(initialState)
+        setEditId('')
+    }
+
     if (isLoading) {
         return <Spinner />
     }
@@ -171,6 +177,7 @@ const JobList = () => {
                     formData={formData}
                     formError={formError}
                     handleSubmit={handleSubmit}
+                    closeModal={closeModal}
                     isLoading={isModalLoading}
                     checkValidation={checkValidation}
                     handleInputChange={handleInputChange} />}
