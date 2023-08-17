@@ -166,10 +166,6 @@ const JobList = () => {
         return <Spinner />
     }
 
-    if (jobList.length === 0 && !isLoading) {
-        return <div className="px-5 py-5 mx-auto">Data not found</div>;
-    }
-
     return (
         <div className="px-5 py-5 mx-auto">
             {context?.isModalVisible &&
@@ -191,6 +187,7 @@ const JobList = () => {
                             handleDeleteClick={() => handleDeleteClick(item.id)} />
                     </Fragment>
                 ))}
+                {jobList.length === 0 && !isLoading && <div className="px-5 py-5 mx-auto">Data not found</div>}
             </div>
         </div>
     )
