@@ -12,6 +12,7 @@ const StepTwo: React.FC<ModalStepProps> = ({ formData, handleInputChange }) => {
                     label="Experience"
                     name="minExperience"
                     type="number"
+                    min={0}
                     onChange={handleInputChange}
                     value={formData.minExperience} />
             </div>
@@ -21,6 +22,7 @@ const StepTwo: React.FC<ModalStepProps> = ({ formData, handleInputChange }) => {
                     name="maxExperience"
                     inputClass='mt-7'
                     type="number"
+                    min={0}
                     onChange={handleInputChange}
                     value={formData.maxExperience} />
             </div>
@@ -30,6 +32,7 @@ const StepTwo: React.FC<ModalStepProps> = ({ formData, handleInputChange }) => {
                     label="Salary"
                     name="minSalary"
                     type="number"
+                    min={0}
                     onChange={handleInputChange}
                     value={formData.minSalary} />
             </div>
@@ -39,6 +42,7 @@ const StepTwo: React.FC<ModalStepProps> = ({ formData, handleInputChange }) => {
                     name="maxSalary"
                     inputClass='mt-7'
                     type="number"
+                    min={0}
                     onChange={handleInputChange}
                     value={formData.maxSalary} />
             </div>
@@ -48,6 +52,7 @@ const StepTwo: React.FC<ModalStepProps> = ({ formData, handleInputChange }) => {
                     label="Total employee"
                     name="totalEmployee"
                     type="number"
+                    min={0}
                     onChange={handleInputChange}
                     value={formData.totalEmployee} />
             </div>

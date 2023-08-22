@@ -159,6 +159,7 @@ const JobList = () => {
     const closeModal = () => {
         context?.setIsModalVisible(false)
         setFormData(initialState)
+        setFormErrors(initialState)
         setEditId('')
     }
 
